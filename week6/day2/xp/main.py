@@ -23,3 +23,9 @@ if height>145:
     print('you are tall enough to ride')
 else:
     print('you need to grow some more to ride...')
+
+i=1
+while i<=10:
+    print(i)
+    i+=1
+
