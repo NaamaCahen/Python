@@ -1,9 +1,10 @@
 word = input("please insert a word:")
-dic_word={
-    "d":[5]
-}
-for i, letter in enumerate(word):
-     if dic_word[letter] in dic_word:
-        dic_word[letter].insert(i)
-     else:dic_word[letter]=[i]
-print(dic_word)
+dict_word={}
+i=0
+for letter in word:
+     if letter in dict_word:
+        dict_word[letter].append(i)
+     else:
+         dict_word[letter]=[i]
+     i+=1
+print(dict_word)
