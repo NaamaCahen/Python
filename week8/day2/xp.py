@@ -85,5 +85,43 @@ class Zoo:
     def sell_animal(self,animal_sold):
         if animal_sold in self.animals:
             self.animals.remove(animal_sold)
-    # def sort_animals(self):
-    #     sorted(self.animals)
+    def sort_animals(self):
+        sorted_animals = sorted(self.animals)
+        animals_dict={}
+        i=0
+        j=1
+        while i<len(sorted_animals):
+            lst=[sorted_animals[i]]
+            i+=1
+            while i<len(sorted_animals) and sorted_animals[i].startswith(lst[0][0]):
+                lst.append(sorted_animals[i])
+                i+=1
+            animals_dict[j]=lst
+            j+=1
+        return animals_dict
+    def get_groups(self):
+        sorted_dict=self.sort_animals()
+        for group in sorted_dict.values():
+            print(group)
+
+
+
+
+
+
+ramat_gan_safari=Zoo('safari')
+ramat_gan_safari.add_animal('giraffe')
+ramat_gan_safari.add_animal('penguin')
+ramat_gan_safari.add_animal('cow')
+ramat_gan_safari.add_animal('fox')
+ramat_gan_safari.add_animal('bear')
+ramat_gan_safari.add_animal('monkey')
+ramat_gan_safari.add_animal('baboon')
+ramat_gan_safari.add_animal('cat')
+ramat_gan_safari.get_animals()
+print('*'*20)
+animals_sorted=ramat_gan_safari.sort_animals()
+print(animals_sorted)
+ramat_gan_safari.get_groups()
+ramat_gan_safari.sell_animal('monkey')
+ramat_gan_safari.get_animals()
