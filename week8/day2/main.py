@@ -7,10 +7,11 @@ class Farm:
         self.animals = {}
 
     def add_animal(self, animal_name: str, num: int = 1):
-        if animal_name in self.animals.keys():
-            self.animals[animal_name] += num
-        else:
-            self.animals[animal_name] = num
+        # if animal_name in self.animals.keys():
+        #     self.animals[animal_name] += num
+        # else:
+        #     self.animals[animal_name] = num
+        self.animals[animal_name]=self.animals.get(animal_name,0)+num
     def get_info(self):
         return (f"""
         {self.farm_name}'s Farm
