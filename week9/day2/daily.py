@@ -15,40 +15,40 @@ class Circle:
 
     def __add__(self, other):
         if type(other) == Circle:
-            return self.radius + other.radius
+            return self.radius + other.radius # we are expecting to get a new circle at this case
 
     def __gt__(self, other):
-        if type(other) == Circle:
+        if type(other) == Circle: # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
             if self.radius > other.radius:
                 return True
             return False
 
     def __lt__(self, other):
-        if type(other) == Circle:
+        if type(other) == Circle: # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
             if self.radius < other.radius:
                 return True
             return False
 
     def __le__(self, other):
-        if type(other) == Circle:
+        if type(other) == Circle: # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
             if self.radius <= other.radius:
                 return True
             return False
 
-    def __eq__(self, other):
+    def __eq__(self, other): # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
         if type(other) == Circle:
             if self.radius == other.radius:
                 return True
             return False
 
-    def __ne__(self, other):
+    def __ne__(self, other): # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
         if type(other) == Circle:
             if self.radius != other.radius:
                 return True
             return False
 
     def __ge__(self, other):
-        if type(other) == Circle:
+        if type(other) == Circle: # if you are doing this check then you need to deside what to do, like throw exception or what ever you deside
             if self.radius >= other.radius:
                 return True
             return False
