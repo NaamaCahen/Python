@@ -10,18 +10,18 @@ class Human:
 
     def __eq__(self, other):
         if isinstance(other,Human):
-            if self.age == other.age:
+            if self.age == other.age: # you can improve this function to a single line of code like: return self.age == other.age
                 return True
             return False
 
     def __lt__(self, other):
         if isinstance(other,Human):
-            if self.age < other.age:
+            if self.age < other.age: # you can improve this function to a single line of code like: return self.age < other.age
                 return True
             return False
 
 
-    def add_family_member(self, person):
+    def add_family_member(self, person): # there is a bug at this function, le'ts say that we have the following: member A, B, C for A his family member is B and we add C as family member to A then we need to add it also to B
         self.family.append(person)
         person.family.append(self)
 
