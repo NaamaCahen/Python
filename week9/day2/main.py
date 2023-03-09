@@ -25,9 +25,9 @@ class Currency:
         return f'{self.amount} {self.currency}s'
 
     def __add__(self, other):
-        if type(other) == (int or float):
+        if type(other) == (int or float): # are you sure this is a vaild syntax?
             return self.amount + other
-        if type(other) == Currency:
+        if type(other) == Currency: # the __add__ must return something, what if the type of the other is not Currency? it will not return anything
             if self.currency != other.currency:
                 raise TypeError(f' Cannot add between Currency type {self.currency} and {other.currency}')
             else:
@@ -37,7 +37,7 @@ class Currency:
         if type(other) == (int or float):
             self.amount += other
             return self
-        if type(other) == Currency:
+        if type(other) == Currency: # the __iadd__ must return something, what if the type of the other is not Currency? it will not return anything
             if self.currency != other.currency:
                 raise TypeError(f' Cannot add between Currency type {self.currency} and {other.currency}')
             else:
